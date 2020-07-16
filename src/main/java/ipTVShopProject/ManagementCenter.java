@@ -41,7 +41,7 @@ public class ManagementCenter {
 
             orderAccepted.setId(this.getId());
             orderAccepted.setInstallationAddress(this.getInstallationAddress());
-            orderAccepted.setOrderId(this.getId());
+            orderAccepted.setOrderId(this.getOrderId());
             orderAccepted.setStatus(this.getStatus());
             orderAccepted.setEngineerId(this.getEngineerId());
             orderAccepted.setEngineerName(this.getEngineerName());
@@ -65,7 +65,7 @@ public class ManagementCenter {
             jc.setEngineerName(this.getEngineerName());
             jc.setId(this.getId());
             jc.setInstallationAddress(this.getInstallationAddress());
-            jc.setOrderId(this.orderId);
+            jc.setOrderId(this.getOrderId());
             jc.setStatus(this.getStatus());
 
             BeanUtils.copyProperties(this, jc);
@@ -87,7 +87,7 @@ public class ManagementCenter {
 
             orderCancelAccepted.setId(this.getId());
             orderCancelAccepted.setInstallationAddress(this.getInstallationAddress());
-            orderCancelAccepted.setOrderId(this.getId());
+            orderCancelAccepted.setOrderId(this.getOrderId());
             orderCancelAccepted.setStatus("ORDERCANCELED");
             orderCancelAccepted.setEngineerId(this.getEngineerId());
             orderCancelAccepted.setEngineerName(this.getEngineerName());

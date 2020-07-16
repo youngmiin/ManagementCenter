@@ -52,12 +52,9 @@ public class PolicyHandler{
             try
             {
                 System.out.println("##### listener installcompleted : " + installationCompleted.toJson());
-                managementCenterRepository.findById(installationCompleted.getOrderId())
-                            .ifPresent(
-                                    managementCenter -> {
-                                        managementCenter.setStatus(installationCompleted.getStatus());
-                                        managementCenterRepository.save(managementCenter);
-                                    });
+                ManagementCenter mc2 = managementCenterRepository.findByOrderId(installationCompleted.getOrderId());
+                mc2.setStatus(installationCompleted.getStatus());
+                managementCenterRepository.save(mc2);
             }
             catch (Exception e){
                 e.printStackTrace();
@@ -73,9 +70,9 @@ public class PolicyHandler{
             try {
                         System.out.println("##### listener cancelORderd : " + cancelOrdered.toJson());
 
-                        Optional<ManagementCenter> mc = managementCenterRepository.findByOrderId(cancelOrdered.getId());
-                        mc.get().setStatus("CancelRequested");
-                        managementCenterRepository.save(mc.get());
+                        ManagementCenter mc = managementCenterRepository.findByOrderId(cancelOrdered.getId());
+                        mc.setStatus("CancelRequested");
+                        managementCenterRepository.save(mc);
 
 
                         System.out.println("######  test10");

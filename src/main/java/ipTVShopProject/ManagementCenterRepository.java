@@ -8,6 +8,6 @@ import java.util.Optional;
 
 public interface ManagementCenterRepository extends CrudRepository<ManagementCenter, Long> {
 
-    Optional<ManagementCenter> findByOrderId(Long orderId);
+    ManagementCenter findByOrderId(Long orderId);
 
 }
