@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Date;
 
-@FeignClient(name="Installation", url="http://localhost:8083")  //url="http://Installation:8080")
-//@FeignClient(name="Installation", url="http://Installation:8080")
+//@FeignClient(name="Installation", url="http://localhost:8083")  //url="http://Installation:8080")
+@FeignClient(name="Installation", url="http://Installation:8080")
 public interface InstallationService {
 
     @RequestMapping(method= RequestMethod.POST, path="/installations")
